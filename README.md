@@ -1,36 +1,721 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ОГЭ по химии — Тренажёр</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ОГЭ по химии — тренажёр</title>
 <style>
-:root{--navy:#092d63;--blue:#1769c2;--blue2:#2f8ce5;--pale:#edf6ff;--ink:#15345b;--muted:#647b98;--line:#d7e8fa}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#f5faff,#eaf4ff);min-height:100vh}header{background:linear-gradient(115deg,#082a5c,#104d94 65%,#176bbd);color:white;padding:18px max(22px,calc((100% - 1160px)/2));position:relative;overflow:hidden}header:after{content:"";position:absolute;width:220px;height:220px;border:1px solid #ffffff24;border-radius:50%;right:8%;top:-130px;box-shadow:0 0 0 24px #ffffff0c,0 0 0 48px #ffffff08}.nav{display:flex;align-items:center;gap:13px;position:relative;z-index:1}.logo-icon{width:43px;height:43px;border-radius:14px;background:#ffffff1b;border:1px solid #ffffff35;display:grid;place-items:center;font-size:25px}.logo{font-size:21px;font-weight:800}.logo small{display:block;font-size:12px;font-weight:500;opacity:.78;letter-spacing:1.5px;margin-top:3px}main{max-width:1160px;margin:0 auto;padding:38px 22px 58px}.hero{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:22px;padding:42px 44px;border-radius:28px;background:linear-gradient(120deg,#fff,#f3f9ff 72%,#e3f2ff);border:1px solid #d9eafa;box-shadow:0 18px 48px #164b8010;overflow:hidden}.eyebrow{display:inline-flex;background:#e4f2ff;color:#1763ad;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.4px}h1{font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-1.3px;margin:20px 0 15px;color:#0b2c5a}.description{font-size:16px;line-height:1.75;color:#5f7694;max-width:590px;margin:0}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:23px;padding:14px 22px;border:0;border-radius:13px;background:linear-gradient(110deg,#1768bd,#2588df);color:#fff;text-decoration:none;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 9px 20px #1768bd2c;transition:transform .2s,box-shadow .2s}.button:hover{transform:translateY(-2px);box-shadow:0 13px 24px #1768bd3d}.lab-art{min-height:230px;display:grid;place-items:center}.lab-art svg{width:min(100%,310px);height:auto;filter:drop-shadow(0 15px 16px #1267ad16)}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:39px 2px 18px}h2{font-size:27px;margin:0;color:#0b2e5d;letter-spacing:-.5px}.section-heading p{margin:7px 0 0;color:var(--muted);font-size:14px}.count{background:#e0efff;color:#1a66b2;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap}.variants{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:17px;box-shadow:0 7px 20px #1d4e7b0b;transition:transform .2s,border-color .2s,box-shadow .2s}.variant-card{min-height:125px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:14px}.variant-top{display:flex;align-items:center;gap:11px}.flask-icon{width:39px;height:39px;flex:none;border-radius:12px;background:#e9f5ff;display:grid;place-items:center;color:#1b71c3}.flask-icon svg{width:23px;height:23px}.card h3{font-size:16px;margin:0;color:#16385f}.variant-card button{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #c8e1fa;background:#f3f9ff;color:#1766b4;font-weight:800;font-size:13px;cursor:pointer}.variant-card:hover{transform:translateY(-3px);border-color:#9cccf4;box-shadow:0 13px 28px #1d4e7b14}.variant-card button:hover{background:#e1f1ff}#answer-form{margin-top:30px;scroll-margin-top:20px}.form-panel{background:#fff;border:1px solid var(--line);border-radius:25px;padding:clamp(20px,4vw,38px);box-shadow:0 15px 40px #164b8010}.form-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:24px}.tag{display:inline-block;background:#e4f2ff;color:#1763ad;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:13px}.form-description{color:var(--muted);line-height:1.65;margin:10px 0 0;font-size:14px}.back-button{margin:0;background:#edf6ff;color:#1766b4;box-shadow:none;border:1px solid #d3e8fb;white-space:nowrap}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.field{border:1px solid #dfebf7;border-radius:14px;padding:14px;background:#fbfdff}.field label{display:block;font-size:14px;font-weight:800;color:#24496f;margin-bottom:10px}.field input{width:100%;border:1px solid #d4e2f0;border-radius:10px;padding:12px 11px;font:inherit;font-size:15px;background:white;color:#14365e;outline:none}.field input:focus{border-color:#4096df;box-shadow:0 0 0 3px #4096df20}.form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:22px}.form-actions .button{margin:0}.secondary{background:white;color:#1a67b3;border:1px solid #cde2f7;box-shadow:none}#result{display:none;margin-top:24px;padding:22px;border-radius:16px;background:#f0f8ff;border:1px solid #cde5fb}#result h2{font-size:22px;margin-bottom:12px}#result-text{white-space:pre-wrap;line-height:1.7;color:#254a70;margin:0}.note{margin-top:17px;padding:12px 14px;border-radius:12px;background:#fff8e8;border:1px solid #f4dfae;color:#76531b;font-size:13px;line-height:1.6}footer{text-align:center;padding:26px 18px 35px;color:#6e86a2;font-size:13px}.footer-molecule{color:#5d9bd3;font-size:18px;letter-spacing:8px;margin-bottom:9px}@media(max-width:900px){.variants{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:34px;grid-template-columns:1.1fr .9fr}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){header{padding:15px 18px}main{padding:23px 14px 42px}.hero{grid-template-columns:1fr;padding:28px 23px;gap:4px}.hero-copy{position:relative;z-index:1}.lab-art{min-height:155px;margin-top:4px}.lab-art svg{width:210px}h1{font-size:35px}.description{font-size:15px}.section-heading{align-items:flex-start;flex-direction:column;margin-top:31px}h2{font-size:24px}.variants{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:13px}.variant-card{min-height:116px}.flask-icon{width:34px;height:34px}.card h3{font-size:14px}.variant-card button{font-size:12px;padding:10px 6px}.form-top{flex-direction:column}.fields{grid-template-columns:1fr}.form-panel{padding:20px 15px}.back-button{align-self:flex-start}.form-actions .button{width:100%}}
+:root{--blue:#1769aa;--deep:#123b63;--pale:#eaf5ff;--ink:#172b3d;--muted:#5c7184}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#eaf5ff,#f7fbff 45%,#e7f3fb);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink)}
+header{padding:32px 18px 25px;background:linear-gradient(120deg,#0c4778,#187fba);color:white}
+.wrap{max-width:1050px;margin:auto;padding:0 18px}h1{font-size:clamp(26px,5vw,42px);line-height:1.12;margin:0 0 10px}header p{max-width:720px;margin:0;color:#e3f3ff}
+main{padding:26px 0 60px}.notice{background:#fff7df;border:1px solid #f0d58b;border-radius:14px;padding:13px 16px;margin-bottom:20px;color:#5d4a17}
+h2{font-size:23px;margin:0 0 14px}.variants{display:grid;grid-template-columns:repeat(auto-fill,minmax(66px,1fr));gap:10px}
+.variant{border:1px solid #c5dced;background:white;border-radius:13px;padding:14px 8px;color:var(--deep);font-weight:750;font-size:17px;cursor:pointer;box-shadow:0 3px 10px #16466b0d}
+.variant:hover,.variant:focus{background:var(--pale);border-color:var(--blue);outline:2px solid #8fc9f5}
+.panel{background:white;border:1px solid #d3e3ef;border-radius:18px;padding:clamp(16px,3vw,28px);box-shadow:0 12px 30px #17466b10}
+.topline{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}.back,.secondary{border:1px solid #bfd5e5;background:#f5faff;border-radius:10px;padding:10px 14px;color:#174a75;font-weight:650;cursor:pointer}
+.tasks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}.task{padding:13px;border:1px solid #d9e6ef;border-radius:12px;background:#fbfdff}.task label{display:block;font-weight:700;margin-bottom:8px}.points{font-size:12px;color:var(--muted);font-weight:500}.task input{width:100%;border:1px solid #b8ccdb;border-radius:8px;padding:10px;font:inherit;background:white}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.primary{border:0;background:var(--blue);color:white;border-radius:10px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer}.primary:hover{background:#10558d}.result{margin-top:18px;padding:16px;border-radius:12px;background:#eef7ff;border:1px solid #c6e2f7}.hidden{display:none}.small{color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
-<header><div class="nav"><div class="logo-icon" aria-hidden="true">⚗</div><div class="logo">ОГЭ по химии<small>ТРЕНАЖЁР · 9 КЛАСС</small></div></div></header>
-<main>
-<section class="hero"><div class="hero-copy"><span class="eyebrow">⚗ ПОДГОТОВКА К ОГЭ</span><h1>Изучай.<br>Тренируйся.<br>Сдавай уверенно.</h1><p class="description">Решай варианты ОГЭ по химии, вводи ответы и проверяй результат. Выбирай вариант и тренируйся в удобном темпе.</p><a href="#variants" class="button">Выбрать вариант →</a></div>
-<div class="lab-art" aria-hidden="true"><svg viewBox="0 0 320 270" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="160" cy="130" r="104" fill="#E5F3FF"/><circle cx="241" cy="49" r="19" fill="#D1E9FF"/><circle cx="68" cy="204" r="13" fill="#D1E9FF"/><path d="M133 40h54M145 40v67l-45 81c-8 15 2 32 20 32h80c18 0 28-17 20-32l-45-81V40" fill="#fff" stroke="#2C82CC" stroke-width="4" stroke-linejoin="round"/><path d="M118 151l-18 37c-8 15 2 32 20 32h80c18 0 28-17 20-32l-17-37c-24 13-58 13-85 0Z" fill="#78C8FF" fill-opacity=".85"/><path d="M118 151c27 11 58 11 85 0" stroke="#2C82CC" stroke-width="3"/><circle cx="144" cy="174" r="5" fill="#fff"/><circle cx="173" cy="188" r="7" fill="#fff"/><circle cx="191" cy="166" r="4" fill="#fff"/><path d="M218 80l20-18 20 18-20 18-20-18Z" stroke="#2C82CC" stroke-width="3"/><circle cx="218" cy="80" r="5" fill="#2C82CC"/><circle cx="258" cy="80" r="5" fill="#2C82CC"/><circle cx="238" cy="62" r="5" fill="#2C82CC"/><circle cx="238" cy="98" r="5" fill="#2C82CC"/><path d="M54 102l14-13 14 13-14 13-14-13Z" stroke="#70B5EF" stroke-width="3"/><circle cx="54" cy="102" r="4" fill="#70B5EF"/><circle cx="82" cy="102" r="4" fill="#70B5EF"/><circle cx="68" cy="89" r="4" fill="#70B5EF"/><circle cx="68" cy="115" r="4" fill="#70B5EF"/><path d="M245 177l16-37 16 37h-32Z" fill="#EAF6FF" stroke="#70B5EF" stroke-width="3" stroke-linejoin="round"/><path d="M251 164h20" stroke="#70B5EF" stroke-width="3"/></svg></div></section>
-<section id="variants"><div class="section-heading"><div><h2>Выбери вариант</h2><p>30 тренировочных вариантов · 19 заданий в каждом</p></div><span class="count">30 вариантов</span></div><div class="variants" id="variants-list"></div></section>
-<section id="answer-form" style="display:none"><div class="form-panel"><div class="form-top"><div><span class="tag" id="variant-label">Вариант 1</span><h2>Введи свои ответы</h2><p class="form-description">Заполни поля напротив номеров заданий. Если не знаешь ответ, оставь поле пустым.</p></div><button type="button" class="button back-button" onclick="backToVariants()">← Все варианты</button></div><form id="test-form"><div id="answer-fields" class="fields"></div><div class="form-actions"><button type="submit" class="button">Проверить ответы</button><button type="button" class="button secondary" onclick="resetAnswers()">Очистить ответы</button></div></form><div id="result"><h2>Результат</h2><p id="result-text"></p></div><div class="note">Ключи правильных ответов пока не добавлены. Когда подготовим ответы для вариантов, их можно будет внести в код в разделе <b>answerKeys</b>. До этого проверка не показывает фиктивный результат.</div></div></section>
-</main><footer><div class="footer-molecule" aria-hidden="true">○—○　⬡　○—○</div>Тренажёр для подготовки к ОГЭ по химии</footer>
+<header><div class="wrap"><h1>ОГЭ по химии</h1><p>Тренажёр для подготовки: 30 вариантов, 19 заданий в каждом. Вводите ответы и проверяйте результат по ключам.</p></div></header>
+<main class="wrap">
+<div class="notice"><b>Обратите внимание:</b> ключи ответов добавлены по присланным фотографиям. В некоторых ячейках таблицы цифры частично закрыты водяным знаком, поэтому отдельные ответы могут требовать сверки с оригиналом.</div>
+<section id="choose"><h2>Выберите вариант</h2><div class="variants" id="variants"></div></section>
+<section id="work" class="panel hidden" aria-live="polite">
+<div class="topline"><div><h2 id="variantTitle">Вариант</h2><div class="small">Максимум — 24 балла</div></div><button class="back" id="back">← К вариантам</button></div>
+<div class="tasks" id="tasks"></div>
+<div class="actions"><button class="primary" id="check">Проверить ответы</button><button class="secondary" id="clear">Очистить ответы</button></div>
+<div id="result" class="result hidden"></div>
+</section>
+</main>
 <script>
-let currentVariant=1;
-const variantsList=document.getElementById('variants-list');
-const singlePointTasks=[1,2,3,5,6,7,8,11,13,14,15,16,18,19];
-const twoPointTasks=[4,9,10,12,17];
-// Внеси правильные ответы в массив нужного варианта. null означает «ответ пока не задан».
-const answerKeys={};
-for(let variant=1;variant<=30;variant++) answerKeys[variant]=Array(19).fill(null);
-const flaskIcon='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3h6M10 3v6l-4.5 8.1A2.6 2.6 0 0 0 7.8 21h8.4a2.6 2.6 0 0 0 2.3-3.9L14 9V3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.8 16h8.4M9 18.5h6" stroke="#54A8E8" stroke-width="1.7"/></svg>';
-for(let i=1;i<=30;i++) variantsList.insertAdjacentHTML('beforeend',`<article class="card variant-card"><div class="variant-top"><span class="flask-icon">${flaskIcon}</span><h3>Вариант ${i}</h3></div><button type="button" onclick="selectVariant(${i})">Открыть вариант →</button></article>`);
-function selectVariant(number){currentVariant=number;document.getElementById('variant-label').textContent='Вариант '+number;document.getElementById('result').style.display='none';document.getElementById('test-form').style.display='block';const fields=document.getElementById('answer-fields');fields.innerHTML='';for(let i=1;i<=19;i++)fields.insertAdjacentHTML('beforeend',`<div class="field"><label for="answer-${i}">Задание ${i} · ${twoPointTasks.includes(i)?'до 2 баллов':'1 балл'}</label><input id="answer-${i}" name="answer-${i}" type="text" autocomplete="off" placeholder="Твой ответ"></div>`);document.getElementById('answer-form').style.display='block';document.getElementById('answer-form').scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('answer-1').focus({preventScroll:true});}
-function backToVariants(){document.getElementById('answer-form').style.display='none';document.getElementById('variants').scrollIntoView({behavior:'smooth',block:'start'});}
-function resetAnswers(){document.getElementById('test-form').reset();document.getElementById('result').style.display='none';document.getElementById('test-form').style.display='block';}
-function normalizeAnswer(value){return String(value??'').trim().replace(/\s+/g,'').replace(/,/g,'.');}
-// Считает вставку, удаление или замену одного символа как одну ошибку.
-function countElementErrors(student,correct){const rows=Array.from({length:student.length+1},()=>[]);for(let i=0;i<=student.length;i++)rows[i][0]=i;for(let j=0;j<=correct.length;j++)rows[0][j]=j;for(let i=1;i<=student.length;i++){for(let j=1;j<=correct.length;j++){const cost=student[i-1]===correct[j-1]?0:1;rows[i][j]=Math.min(rows[i-1][j]+1,rows[i][j-1]+1,rows[i-1][j-1]+cost);}}return rows[student.length][correct.length];}
-document.getElementById('test-form').addEventListener('submit',function(event){event.preventDefault();const keys=answerKeys[currentVariant];if(!keys||keys.some(key=>key===null||key===undefined||String(key).trim()==='')){alert('Ключи ответов для варианта '+currentVariant+' ещё не заполнены. Добавим их, когда будут готовы правильные ответы.');return;}let score=0,fullyCorrect=0;const maxScore=24,errors=[];for(let i=1;i<=19;i++){const studentAnswer=normalizeAnswer(document.getElementById('answer-'+i).value);const correctRaw=keys[i-1];const correctAnswer=normalizeAnswer(correctRaw);const isTwoPoint=twoPointTasks.includes(i),taskMax=isTwoPoint?2:1;let taskScore=0;if(studentAnswer!==''&&studentAnswer===correctAnswer){taskScore=taskMax;fullyCorrect++;}else if(studentAnswer!==''&&isTwoPoint&&countElementErrors(studentAnswer,correctAnswer)===1){taskScore=1;}score+=taskScore;if(taskScore<taskMax)errors.push('№'+i+': твой ответ — '+(studentAnswer||'нет ответа')+', правильный — '+correctRaw+', баллы — '+taskScore+'/'+taskMax);}document.getElementById('test-form').style.display='none';document.getElementById('result').style.display='block';document.getElementById('result-text').textContent='Вариант '+currentVariant+'\nПервичный балл: '+score+' из '+maxScore+'\nПолностью верных заданий: '+fullyCorrect+' из 19\n\nРАЗБОР ОТВЕТОВ\n\n'+(errors.length?errors.join('\n'):'Отлично! Все ответы верны.');document.getElementById('result').scrollIntoView({behavior:'smooth',block:'nearest'});});
-document.addEventListener('keydown',function(event){if(event.key==='Enter'&&event.target.matches('input[id^="answer-"]')){event.preventDefault();const number=Number(event.target.id.split('-')[1]);const next=document.getElementById('answer-'+(number+1));if(next)next.focus();else document.querySelector('#test-form button[type="submit"]').focus();}});
-</script></body></html>
+const answerKeys = {
+  "1": [
+    "24",
+    "143",
+    "321",
+    "212",
+    "35",
+    "12",
+    "25",
+    "13",
+    "255",
+    "431",
+    "35",
+    "122",
+    "25",
+    "25",
+    "122",
+    "124",
+    "443",
+    "25,3",
+    "240"
+  ],
+  "2": [
+    "23",
+    "314",
+    "213",
+    "324",
+    "23",
+    "13",
+    "43",
+    "35",
+    "235",
+    "411",
+    "15",
+    "421",
+    "34",
+    "35",
+    "212",
+    "34",
+    "132",
+    "34,8",
+    "104,4"
+  ],
+  "3": [
+    "23",
+    "75",
+    "213",
+    "124",
+    "35",
+    "35",
+    "41",
+    "14",
+    "214",
+    "124",
+    "24",
+    "241",
+    "15",
+    "25",
+    "211",
+    "23",
+    "233",
+    "30,5",
+    "18,3"
+  ],
+  "4": [
+    "13",
+    "113",
+    "213",
+    "134",
+    "14",
+    "25",
+    "43",
+    "23",
+    "253",
+    "331",
+    "13",
+    "114",
+    "24",
+    "15",
+    "112",
+    "234",
+    "212",
+    "27",
+    "202,5"
+  ],
+  "5": [
+    "34",
+    "313",
+    "132",
+    "422",
+    "12",
+    "35",
+    "35",
+    "35",
+    "221",
+    "413",
+    "23",
+    "423",
+    "34",
+    "25",
+    "212",
+    "14",
+    "422",
+    "21",
+    "315"
+  ],
+  "6": [
+    "12",
+    "68",
+    "132",
+    "241",
+    "25",
+    "23",
+    "23",
+    "13",
+    "432",
+    "431",
+    "35",
+    "432",
+    "15",
+    "36",
+    "221",
+    "1",
+    "414",
+    "40",
+    "1"
+  ],
+  "7": [
+    "24",
+    "92",
+    "231",
+    "344",
+    "25",
+    "12",
+    "24",
+    "45",
+    "124",
+    "442",
+    "14",
+    "123",
+    "24",
+    "34",
+    "212",
+    "12",
+    "233",
+    "36",
+    "10"
+  ],
+  "8": [
+    "14",
+    "414",
+    "231",
+    "241",
+    "35",
+    "23",
+    "24",
+    "14",
+    "155",
+    "132",
+    "14",
+    "314",
+    "23",
+    "36",
+    "221",
+    "14",
+    "423",
+    "37,5",
+    "19,69"
+  ],
+  "9": [
+    "23",
+    "414",
+    "213",
+    "144",
+    "35",
+    "23",
+    "14",
+    "15",
+    "135",
+    "341",
+    "14",
+    "423",
+    "35",
+    "25",
+    "211",
+    "2",
+    "121",
+    "63,58",
+    "2,5"
+  ],
+  "10": [
+    "45",
+    "34",
+    "132",
+    "312",
+    "13",
+    "45",
+    "34",
+    "34",
+    "431",
+    "321",
+    "35",
+    "421",
+    "25",
+    "25",
+    "212",
+    "123",
+    "431",
+    "68,85",
+    "51,64"
+  ],
+  "11": [
+    "35",
+    "35",
+    "132",
+    "131",
+    "34",
+    "24",
+    "31",
+    "14",
+    "253",
+    "231",
+    "13",
+    "321",
+    "25",
+    "25",
+    "212",
+    "12",
+    "311",
+    "35,5",
+    "26,6"
+  ],
+  "12": [
+    "24",
+    "75",
+    "312",
+    "441",
+    "15",
+    "34",
+    "51",
+    "35",
+    "234",
+    "342",
+    "15",
+    "213",
+    "35",
+    "24",
+    "221",
+    "134",
+    "412",
+    "28,9",
+    "23,1"
+  ],
+  "13": [
+    "14",
+    "113",
+    "231",
+    "342",
+    "25",
+    "35",
+    "42",
+    "25",
+    "351",
+    "341",
+    "34",
+    "243",
+    "23",
+    "35",
+    "121",
+    "23",
+    "314",
+    "65",
+    "98"
+  ],
+  "14": [
+    "24",
+    "145",
+    "312",
+    "234",
+    "13",
+    "23",
+    "31",
+    "23",
+    "135",
+    "423",
+    "14",
+    "133",
+    "34",
+    "26",
+    "221",
+    "234",
+    "312",
+    "63,2",
+    "1,3"
+  ],
+  "15": [
+    "15",
+    "91",
+    "132",
+    "341",
+    "24",
+    "12",
+    "45",
+    "25",
+    "314",
+    "412",
+    "25",
+    "214",
+    "14",
+    "15",
+    "112",
+    "4",
+    "224",
+    "31,6",
+    "285"
+  ],
+  "16": [
+    "14",
+    "57",
+    "213",
+    "412",
+    "14",
+    "34",
+    "52",
+    "25",
+    "235",
+    "342",
+    "13",
+    "342",
+    "14",
+    "34",
+    "112",
+    "134",
+    "234",
+    "28,4",
+    "3,4"
+  ],
+  "17": [
+    "34",
+    "64",
+    "213",
+    "124",
+    "45",
+    "24",
+    "34",
+    "25",
+    "315",
+    "241",
+    "14",
+    "321",
+    "35",
+    "25",
+    "221",
+    "13",
+    "124",
+    "54,2",
+    "32,5"
+  ],
+  "18": [
+    "14",
+    "36",
+    "132",
+    "243",
+    "13",
+    "12",
+    "24",
+    "15",
+    "312",
+    "122",
+    "25",
+    "124",
+    "13",
+    "15",
+    "221",
+    "23",
+    "342",
+    "69,6",
+    "2"
+  ],
+  "19": [
+    "45",
+    "111",
+    "321",
+    "321",
+    "15",
+    "13",
+    "52",
+    "34",
+    "213",
+    "431",
+    "14",
+    "114",
+    "34",
+    "26",
+    "211",
+    "134",
+    "211",
+    "16,1",
+    "5,6"
+  ],
+  "20": [
+    "15",
+    "103",
+    "132",
+    "214",
+    "35",
+    "34",
+    "51",
+    "35",
+    "214",
+    "314",
+    "13",
+    "132",
+    "24",
+    "35",
+    "121",
+    "124",
+    "231",
+    "46,4",
+    "65"
+  ],
+  "21": [
+    "25",
+    "27",
+    "132",
+    "314",
+    "14",
+    "35",
+    "52",
+    "24",
+    "234",
+    "214",
+    "15",
+    "214",
+    "24",
+    "46",
+    "121",
+    "13",
+    "231",
+    "19",
+    "23,75"
+  ],
+  "22": [
+    "23",
+    "97",
+    "132",
+    "132",
+    "13",
+    "23",
+    "42",
+    "14",
+    "414",
+    "234",
+    "23",
+    "342",
+    "25",
+    "25",
+    "121",
+    "124",
+    "413",
+    "23",
+    "184"
+  ],
+  "23": [
+    "13",
+    "153",
+    "231",
+    "341",
+    "14",
+    "25",
+    "51",
+    "15",
+    "241",
+    "421",
+    "15",
+    "231",
+    "12",
+    "25",
+    "112",
+    "12",
+    "433",
+    "16",
+    "0,8"
+  ],
+  "24": [
+    "13",
+    "44",
+    "123",
+    "214",
+    "15",
+    "45",
+    "52",
+    "13",
+    "321",
+    "142",
+    "23",
+    "241",
+    "35",
+    "14",
+    "212",
+    "134",
+    "233",
+    "24",
+    "480"
+  ],
+  "25": [
+    "24",
+    "419",
+    "312",
+    "412",
+    "15",
+    "15",
+    "45",
+    "12",
+    "435",
+    "323",
+    "15",
+    "143",
+    "15",
+    "24",
+    "221",
+    "34",
+    "241",
+    "21",
+    "2,38"
+  ],
+  "26": [
+    "25",
+    "29",
+    "231",
+    "143",
+    "14",
+    "14",
+    "15",
+    "15",
+    "341",
+    "312",
+    "35",
+    "342",
+    "14",
+    "34",
+    "212",
+    "134",
+    "214",
+    "17,8",
+    "53,4"
+  ],
+  "27": [
+    "14",
+    "111",
+    "132",
+    "233",
+    "25",
+    "23",
+    "45",
+    "13",
+    "235",
+    "314",
+    "24",
+    "131",
+    "24",
+    "15",
+    "121",
+    "34",
+    "341",
+    "73,2",
+    "77"
+  ],
+  "28": [
+    "35",
+    "144",
+    "312",
+    "142",
+    "12",
+    "14",
+    "35",
+    "45",
+    "324",
+    "312",
+    "35",
+    "142",
+    "34",
+    "24",
+    "122",
+    "234",
+    "132",
+    "40",
+    "0,1"
+  ],
+  "29": [
+    "23",
+    "145",
+    "213",
+    "234",
+    "25",
+    "14",
+    "45",
+    "12",
+    "134",
+    "341",
+    "14",
+    "213",
+    "35",
+    "24",
+    "212",
+    "12",
+    "213",
+    "33,6",
+    "4,3"
+  ],
+  "30": [
+    "24",
+    "21",
+    "213",
+    "423",
+    "35",
+    "13",
+    "13",
+    "35",
+    "431",
+    "312",
+    "15",
+    "413",
+    "13",
+    "26",
+    "112",
+    "234",
+    "331",
+    "39,2",
+    "127,6"
+  ]
+};
+const onePoint = new Set([1,2,3,5,6,7,8,11,13,14,15,16,18,19]);
+const twoPoint = new Set([4,9,10,12,17]);
+const variants = document.getElementById('variants');
+const choose = document.getElementById('choose');
+const work = document.getElementById('work');
+const tasks = document.getElementById('tasks');
+const result = document.getElementById('result');
+let current = null;
+for(let i=1;i<=30;i++){
+ const b=document.createElement('button'); b.className='variant'; b.textContent=i; b.setAttribute('aria-label','Вариант '+i);
+ b.addEventListener('click',()=>openVariant(i)); variants.appendChild(b);
+}
+function openVariant(n){
+ current=n; choose.classList.add('hidden'); work.classList.remove('hidden');
+ document.getElementById('variantTitle').textContent='Вариант '+n; tasks.innerHTML=''; result.classList.add('hidden'); result.innerHTML='';
+ for(let t=1;t<=19;t++){
+  const div=document.createElement('div'); div.className='task';
+  const label=document.createElement('label'); label.htmlFor='task'+t;
+  label.textContent='Задание '+t+' ';
+  const pts=document.createElement('span'); pts.className='points'; pts.textContent=onePoint.has(t)?'1 балл':'2 балла'; label.appendChild(pts);
+  const input=document.createElement('input'); input.id='task'+t; input.autocomplete='off'; input.placeholder='Ваш ответ'; input.setAttribute('aria-label','Ответ на задание '+t);
+  div.append(label,input); tasks.appendChild(div);
+ }
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.getElementById('back').addEventListener('click',()=>{work.classList.add('hidden');choose.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('clear').addEventListener('click',()=>{tasks.querySelectorAll('input').forEach(i=>i.value='');result.classList.add('hidden');result.innerHTML='';});
+function norm(s){return String(s??'').trim().replace(/\s+/g,'').replace(',', '.');}
+document.getElementById('check').addEventListener('click',()=>{
+ let score=0, max=24, answered=0, details=[];
+ const key=answerKeys[current];
+ for(let t=1;t<=19;t++){
+  const val=norm(document.getElementById('task'+t).value);
+  if(!val)continue; answered++;
+  const correct=norm(key[t-1]);
+  let earned=0;
+  if(val===correct) earned=onePoint.has(t)?1:2;
+  else if(twoPoint.has(t) && isOneErrorSequence(val,correct)) earned=1;
+  score+=earned;
+  details.push({t,val,correct,earned});
+ }
+ const percent=Math.round(score/max*100);
+ result.classList.remove('hidden');
+ result.innerHTML='<h3 style="margin:0 0 6px">Результат: '+score+' из '+max+' баллов</h3><p style="margin:0 0 12px">Заполнено заданий: '+answered+' из 19. Это '+percent+'% от максимального балла.</p>'+
+ '<details><summary>Посмотреть проверку по заданиям</summary><ol>'+details.map(d=>'<li>Задание '+d.t+': ваш ответ — <b>'+escapeHtml(d.val)+'</b>; правильный — <b>'+escapeHtml(d.correct)+'</b>; баллы: '+d.earned+'</li>').join('')+'</ol></details>';
+});
+function isOneErrorSequence(val,correct){
+ // Для последовательностей из цифр на заданиях с 2 баллами: одна перестановка/ошибка допускает 1 балл.
+ const a=val.replace(/[^0-9]/g,''), b=correct.replace(/[^0-9]/g,'');
+ if(a.length!==b.length || a===b) return false;
+ let diff=0; for(let i=0;i<a.length;i++)if(a[i]!==b[i])diff++;
+ return diff===1;
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+</script>
+</body></html>
